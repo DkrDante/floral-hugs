@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Primary Colors */
+    --color-primary: #F8BBD9; /* soft-rose */
+    --color-primary-foreground: #36454F; /* charcoal */
+    
+    /* Secondary Colors */
+    --color-secondary: #8B1538; /* burgundy */
+    --color-secondary-foreground: #FFFFFF; /* white */
+    
+    /* Accent Colors */
+    --color-accent: #FFD700; /* gold */
+    --color-accent-foreground: #36454F; /* charcoal */
+    
+    /* Background Colors */
+    --color-background: #FFF8F0; /* warm-cream */
+    --color-foreground: #36454F; /* charcoal */
+    
+    /* Surface Colors */
+    --color-card: #F5F5F0; /* light-cream */
+    --color-card-foreground: #36454F; /* charcoal */
+    --color-popover: #FFFFFF; /* white */
+    --color-popover-foreground: #36454F; /* charcoal */
+    
+    /* Muted Colors */
+    --color-muted: #E6E6FA; /* lavender */
+    --color-muted-foreground: #8B7D7D; /* warm-gray */
+    
+    /* Border & Input */
+    --color-border: rgba(248, 187, 217, 0.3); /* soft-rose-30 */
+    --color-input: #FFFFFF; /* white */
+    --color-ring: #F8BBD9; /* soft-rose */
+    
+    /* Status Colors */
+    --color-success: #9CAF88; /* sage-green */
+    --color-success-foreground: #FFFFFF; /* white */
+    --color-warning: #E6B800; /* warm-yellow */
+    --color-warning-foreground: #36454F; /* charcoal */
+    --color-error: #C85A5A; /* soft-red */
+    --color-error-foreground: #FFFFFF; /* white */
+    --color-destructive: #C85A5A; /* soft-red */
+    --color-destructive-foreground: #FFFFFF; /* white */
+    
+    /* Radius */
+    --radius: 0.5rem;
+  }
+  
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+  
+  /* Custom romantic animations */
+  @keyframes float {
+    0%, 100% { transform: translateY(0px) rotate(0deg); opacity: 0.3; }
+    50% { transform: translateY(-10px) rotate(5deg); opacity: 0.8; }
+  }
+  
+  @keyframes bloom {
+    0% { transform: scale(1) rotate(0deg); }
+    50% { transform: scale(1.05) rotate(2deg); }
+    100% { transform: scale(1) rotate(0deg); }
+  }
+  
+  @keyframes pulse-gentle {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.02); opacity: 0.9; }
+  }
+  
+  @keyframes gradient-shift {
+    0%, 100% { filter: hue-rotate(0deg); }
+    50% { filter: hue-rotate(10deg); }
+  }
+  
+  .animate-float {
+    animation: float 4s ease-in-out infinite;
+  }
+  
+  .animate-bloom {
+    animation: bloom 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+  
+  .animate-pulse-gentle {
+    animation: pulse-gentle 2s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite;
+  }
+  
+  .animate-gradient-shift {
+    animation: gradient-shift 8s ease-in-out infinite;
+  }
+  
+  /* Custom romantic shadows */
+  .shadow-romantic {
+    box-shadow: 0 8px 32px rgba(139, 21, 56, 0.08);
+  }
+  
+  .shadow-romantic-lg {
+    box-shadow: 0 12px 40px rgba(139, 21, 56, 0.12);
+  }
+  
+  /* Romantic gradient backgrounds */
+  .bg-romantic-gradient {
+    background: linear-gradient(135deg, #F8BBD9 0%, #FFF8F0 50%, #E6E6FA 100%);
+  }
+  
+  .bg-romantic-gradient-dark {
+    background: linear-gradient(135deg, #8B1538 0%, #F8BBD9 100%);
+  }
+  
+  /* Typography classes */
+  .font-playfair {
+    font-family: 'Playfair Display', serif;
+  }
+  
+  .font-inter {
+    font-family: 'Inter', sans-serif;
+  }
+  
+  .font-dancing {
+    font-family: 'Dancing Script', cursive;
+  }
+}
